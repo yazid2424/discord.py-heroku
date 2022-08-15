@@ -6,10 +6,7 @@ from discord.ext import commands
 from dotenv import load_dotenv
 import html
 
-dotenv_path = join(dirname(__file__), 'GwerTranslator.env')
-load_dotenv(dotenv_path)
 TOKEN = os.getenv('DISCORD_TOKEN')
-GUILD = os.getenv("DISCORD_GUILD")
 
 bot = commands.Bot(command_prefix='!')
 
