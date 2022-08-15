@@ -46,18 +46,10 @@ if len(word_def_link) == 0:
 async def on_ready():
 	print(f'{bot.user} has connected to discord')
 	for guild in bot.guilds:
-		if guild.name == GUILD:
-			break
-
-	print (
-		f'{bot.user} is connected to the following guild:\n'
-		f'{guild.name}(id : {guild.id})'
-		)
-
-	members = '\n - '.join([member.name for member in guild.members])
-	print(f'Guild Members:\n - {members}')
-
-
+		print (
+			f'{bot.user} is connected to the following guild:\n'
+			f'{guild.name}(id : {guild.id})'
+			)
 
 
 @bot.command(name='GwerTranslator', aliases=['GT'])
