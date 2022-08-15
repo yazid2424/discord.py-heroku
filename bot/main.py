@@ -15,10 +15,10 @@ from os.path import exists
 
 word_def_link = {}
 
-if not exists("data.txt"):
-	a_file = open("data.txt", "w")
+if not exists("bot/data.txt"):
+	a_file = open("bot/data.txt", "w")
 else:
-	a_file = open("data.txt", "r")
+	a_file = open("bot/data.txt", "r")
 	for line in a_file:
 		match = re.search('dictionnaire\/mot\/(.+?)\/(.+)', line)
 		word_def_link[match.group(2)] = line
@@ -31,7 +31,7 @@ if len(word_def_link) == 0:
 
 		matches = re.findall('<a href="(\/dictionnaire\/mot\/.+?)">',str(response.content, 'UTF-8'))
 
-		a_file = open("data.txt", "a")
+		a_file = open("bot/data.txt", "a")
 
 		for match in matches:
 			print(match)
